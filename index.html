@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>shadow</title>
+</head>
+<style>
+  body {
+    background: url(back.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  div {
+  float: left;
+  margin-top: 10px;
+  clear: right;
+  content: "";
+}
+
+.div1 {
+    display: block;
+    border-bottom-left-radius: 7px;
+    border-top-left-radius: 7px;
+    width: 400px;
+    height: 600px;
+    background-image: url(backbox.jpg);
+    margin-left: 190px;
+}
+
+.div2 {
+  background-color: white;
+  border-bottom-right-radius: 7px;
+  border-top-right-radius: 7px;
+  width: 550px;
+  height: 600px;
+}
+
+p{
+  padding-top: 10%;
+  margin: 2px 100px;
+  font-size: 24px;
+  padding-bottom: 5%;
+  font-family: Georgia;
+  color: #293b29;
+}
+
+label{
+    color: rgba(55, 57, 59, 0.849);
+    margin: 2px 100px;
+}
+label1{
+    color: rgba(55, 57, 59, 0.849);
+}
+input[type="text"]{
+    margin: 2px 100px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #3c5e3c;
+    accent-color: #3c5e3c;
+}
+
+input[type="date"]{
+    margin: 2px 100px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #3c5e3c;
+    size: 100%;
+    color: rgba(55, 57, 59, 0.849);
+    accent-color: #3c5e3c;
+}
+
+input[type="radio"]{
+    margin-left: 100px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    size: 100%;
+    accent-color: #3c5e3c;
+}
+
+input[type="submit"]{
+
+  margin: 2px 150px;
+  background-color: #3c5e3c;
+  padding: 2px 120px;
+  color: white;
+  border: none;
+  text-align: center;
+  border-radius: 12px;
+}
+
+input::placeholder{
+    font-size: medium;
+}
+
+</style>
+
+<script>
+  function validate(){
+
+if(document.studentform.firstname.value == ""){
+  alert("Please Enter First Name");
+  studentform.firstname.focus();
+  return false;
+}
+if(document.studentform.lastname.value == ""){
+  alert("Please Enter Last Name");
+  studentform.lastname.focus();
+  return false;
+}
+
+if(document.studentform.email.value == ""){
+  alert("Please Enter email");
+  studentform.email.focus();
+  return false;
+}
+
+var mailformat = "/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/";
+if(document.studentform.email.value.match(mailformat)){
+return false;
+}else{
+    alert("Please Enter vaild email-id");
+  studentform.email.focus();
+  return false;
+}
+
+
+if(document.studentform.birthday.value == false)
+{
+  alert("Please Enter birthday");
+  studentform.birthday.focus();
+  return false;
+}
+
+if(document.studentform.birthday.value == false)
+{
+  alert("Please Enter birthday");
+  studentform.birthday.focus();
+  return false;
+}
+
+if(document.studentform.phonenumber.value == ""){
+  alert("Please Enter Mobile Number");
+  studentform.phonenumber.focus();
+  return false;
+}
+
+if(document.studentform.gender.value == false ){
+  alert("Please Select Gender");
+  
+  return false;
+}
+}
+</script>
+
+
+<body>
+
+    <div class="div1">
+      <div class="img1">  
+      </div>
+    </div>
+    <div class="div2"> 
+      <form name="studentform" onsubmit="return validate()" action="success.php">
+    
+        <p>Welcome To Woodlands</p>
+
+        <input name="firstname" type="text" placeholder=" First Name" size="40%"><br><br>
+        <input name="lastname" type="text" placeholder=" Last Name" size="40%"><br><br>
+
+        <input name="email" type="text" placeholder=" Email" size="40%"><br><br>
+
+        <label>Birthday</label><br> 
+        <input name="birthday" type="date"><br><br>
+        
+        <input name="phonenumber" type="text" placeholder=" Phone Number" size="40%" minlength="10" maxlength="10"><br><br>
+  
+        <label>Gender</label><br>
+        <input  type="radio" name="gender">
+        <label1>Male</label><br>
+        <input  type="radio" name="gender"  >
+        <label1>Female</label><br>
+        <input  type="radio"  name="gender" >
+        <label1>Other</label><br><br>
+    
+        <input name="submit" type="submit" value="Register" >
+    
+    </form>
+    </div>
+</body>
+</html>
