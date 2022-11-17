@@ -119,7 +119,7 @@ if(document.studentform.email.value == ""){
   return false;
 }
 
-var mailformat = "/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/";
+var mailformat = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
 if(document.studentform.email.value.match(mailformat)){
 return false;
 }else{
