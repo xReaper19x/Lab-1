@@ -121,9 +121,9 @@ if(document.studentform.email.value == ""){
 
 var mailformat = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
 if(document.studentform.email.value.match(mailformat)){
-return false;
+return true;
 }else{
-    alert("Please Enter vaild email-id");
+  alert("Please Enter vaild email-id");
   studentform.email.focus();
   return false;
 }
